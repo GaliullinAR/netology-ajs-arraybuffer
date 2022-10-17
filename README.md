@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/af1r7ko0j7wrhb9i?svg=true)](https://ci.appveyor.com/project/GaliullinAR/netology-ajs-arraybuffer)
