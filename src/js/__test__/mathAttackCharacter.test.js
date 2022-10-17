@@ -6,8 +6,8 @@ test('Проверка коррекного расчета аттаки Deamon',
   expect(player.attackValue).toBe(80);
 });
 
-test("Тест корректного расчета атаки с выключенным окаменением Deamon", () => {
-  const player = new Deamon("King", 100, false, 3);
+test('Тест корректного расчета атаки с выключенным окаменением Deamon', () => {
+  const player = new Deamon('King', 100, false, 3);
   player.attackValue = 0;
   expect(player.attackValue).toBe(0);
 });
@@ -22,8 +22,7 @@ test('Тест корректного расчета атаки с включе�
   expect(player.attackValue).toBe(74);
 });
 
-test("Тест корректного расчета атаки с включенным окаменением Magician", () => {
-  const player = new Magician("King", 100, true, 3);
+test('Тест корректного расчета атаки с включенным окаменением Magician', () => {
+  const player = new Magician('King', 100, true, 3);
   expect(player.attackValue).toBe(74);
 });
-

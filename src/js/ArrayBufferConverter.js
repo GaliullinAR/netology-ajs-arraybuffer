@@ -10,6 +10,6 @@ export default class ArrayBufferConverter {
   }
 
   toString() {
-    return this.load().reduce((str, item) => str + String.fromCharCode(item), "");
+    return this.load().reduce((str, item) => str + String.fromCharCode(item), '');
   }
 }
