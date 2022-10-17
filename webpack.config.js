@@ -1,44 +1,41 @@
-const path = require('path');
-const HtmlPlugin = require('html-webpack-plugin');
-const MiniCSS = require('mini-css-extract-plugin');
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'app.js',
+    path: path.resolve(__dirname, "dist"),
   },
-  modules: {
+  module: {
     rules: [
       {
-        test: /\.html$/,
+        test: /\.js$/,
+        exclude: /node_modules/,
         use: {
-          loader: 'html-loader',
+          loader: "babel-loader",
         },
       },
       {
-        test: /\.js$/,
+        test: /\.html$/,
         use: {
-          loader: 'babel-loader',
+          loader: "html-loader",
         },
       },
       {
         test: /\.css$/,
-        use: [
-          MiniCSS.loader,
-          'css-loader',
-        ],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
     ],
   },
   plugins: [
-    new HtmlPlugin({
-      template: './src/index.html',
-      filename: 'index.html',
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+      filename: "index.html",
     }),
-    new MiniCSS({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+      chunkFilename: "[id].css",
     }),
   ],
 };
